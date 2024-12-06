@@ -1,5 +1,8 @@
 (executable
  (name main)
  (public_name aoc)
+ (modes byte exe)
+ (flags (:standard -g))
+ (ocamlc_flags -g -bin-annot)
  (libraries solutions utils))
 
