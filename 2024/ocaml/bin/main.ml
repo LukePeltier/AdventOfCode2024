@@ -10,6 +10,7 @@ let days =
     (1, (module Solutions.Day01 : Day));
     (2, (module Solutions.Day02 : Day));
     (3, (module Solutions.Day03 : Day));
+    (4, (module Solutions.Day04 : Day));
   ]
   |> List.to_seq |> DayMap.of_seq
 
