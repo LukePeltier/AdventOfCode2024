@@ -34,6 +34,7 @@ let find_vertical_matches vertical_counter line pattern =
         if String.get line i = find_letter then
           let new_val = new_counter.(i) + 1 in
           if new_val = 4 then (count + 1, 0) else (count, new_val)
+        else if String.get line i = String.get pattern 0 then (count, 1)
         else (count, 0)
       in
       let updated_counter = Array.copy new_counter in
