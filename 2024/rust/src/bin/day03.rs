@@ -1,7 +1,7 @@
-use lazy_regex::Regex;
+use lazy_regex::regex;
 
 pub fn solve(input: &str) -> u64 {
-    let rx = Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)").unwrap();
+    let rx = regex!(r"mul\((\d{1,3}),(\d{1,3})\)");
     let mut product = 0;
     for (_, [leftnum, rightnum]) in rx.captures_iter(input).map(|c| c.extract()) {
         product += leftnum.parse::<u64>().unwrap() * rightnum.parse::<u64>().unwrap();
@@ -11,7 +11,7 @@ pub fn solve(input: &str) -> u64 {
 }
 
 pub fn bonus(input: &str) -> usize {
-    let rx = Regex::new(r"(?s)don't\(\).*?(?:do\(\)|$)|mul\((\d{1,3}),(\d{1,3})\)").unwrap();
+    let rx = regex!(r"(?s)don't\(\).*?(?:do\(\)|$)|mul\((\d{1,3}),(\d{1,3})\)");
     let result = rx
         .captures_iter(input)
         .filter(|cap| cap.get(1).is_some())

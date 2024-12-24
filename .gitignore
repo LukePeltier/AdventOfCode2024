@@ -1,2 +1,17 @@
 *.input
 input.txt
+
+# Advent of Code
+# @see https://old.reddit.com/r/adventofcode/comments/k99rod/sharing_input_data_were_we_requested_not_to/gf2ukkf/?context=3
+
+**/inputs/inputs/*
+!**/inputs/inputs/.keep
+**/inputs/puzzles/*
+!**/inputs/puzzles/.keep
+
+# Dhat
+dhat-heap.json
+
+# Benchmarks
+
+data/timings.json
