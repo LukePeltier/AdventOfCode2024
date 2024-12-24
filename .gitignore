@@ -10,7 +10,7 @@ input.txt
 !**/inputs/puzzles/.keep
 
 # Dhat
-dhat-heap.json
+**/dhat-heap.json
 
 # Benchmarks
 

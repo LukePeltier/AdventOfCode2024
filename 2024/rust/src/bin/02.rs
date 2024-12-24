@@ -1,3 +1,5 @@
+advent_of_code::solution!(2);
+
 fn slice_except(slice: &[i64], exclude_index: usize) -> Vec<i64> {
     assert!(exclude_index < slice.len(), "index out of bounds");
 
@@ -49,7 +51,7 @@ fn is_safe(report: &[i64], checked_full: bool) -> bool {
     false
 }
 
-pub fn solve(input: &str) -> u64 {
+pub fn part_one(input: &str) -> Option<u64> {
     let mut safe_reports = 0;
 
     for line in input.lines() {
@@ -62,9 +64,10 @@ pub fn solve(input: &str) -> u64 {
         }
     }
     println!("Safe reports: {}", safe_reports);
-    safe_reports
+    Some(safe_reports)
 }
-pub fn bonus(input: &str) -> u64 {
+
+pub fn part_two(input: &str) -> Option<u64> {
     let mut safe_reports = 0;
 
     for line in input.lines() {
@@ -77,24 +80,22 @@ pub fn bonus(input: &str) -> u64 {
         }
     }
     println!("Safe reports: {}", safe_reports);
-    safe_reports
+    Some(safe_reports)
 }
 
 #[cfg(test)]
 mod tests {
-
     use super::*;
-    use crate::utils::get_example_input;
 
     #[test]
-    fn example_solve() {
-        let result = solve(&get_example_input(2).unwrap());
-        assert_eq!(2, result);
+    fn test_part_one() {
+        let result = part_one(&advent_of_code::template::read_file("examples", DAY));
+        assert_eq!(result, Some(2));
     }
 
     #[test]
-    fn example_bonus() {
-        let result = bonus(&get_example_input(2).unwrap());
-        assert_eq!(4, result);
+    fn test_part_two() {
+        let result = part_two(&advent_of_code::template::read_file("examples", DAY));
+        assert_eq!(result, Some(4));
     }
 }
