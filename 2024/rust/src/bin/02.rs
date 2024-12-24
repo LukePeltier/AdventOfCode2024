@@ -63,7 +63,6 @@ pub fn part_one(input: &str) -> Option<u64> {
             safe_reports += 1;
         }
     }
-    println!("Safe reports: {}", safe_reports);
     Some(safe_reports)
 }
 
@@ -79,7 +78,6 @@ pub fn part_two(input: &str) -> Option<u64> {
             safe_reports += 1;
         }
     }
-    println!("Safe reports: {}", safe_reports);
     Some(safe_reports)
 }
 

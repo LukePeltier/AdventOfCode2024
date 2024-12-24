@@ -7,7 +7,6 @@ pub fn part_one(input: &str) -> Option<u64> {
     for (_, [leftnum, rightnum]) in rx.captures_iter(input).map(|c| c.extract()) {
         product += leftnum.parse::<u64>().unwrap() * rightnum.parse::<u64>().unwrap();
     }
-    println!("Product: {}", product);
     Some(product)
 }
 
@@ -19,7 +18,6 @@ pub fn part_two(input: &str) -> Option<u64> {
         .map(|cap| cap[1].parse::<usize>().unwrap() * cap[2].parse::<usize>().unwrap())
         .sum();
 
-    println!("Product: {}", result);
     Some(result.try_into().unwrap())
 }
 
